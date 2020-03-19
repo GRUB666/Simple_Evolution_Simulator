@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTimer>
+
 #include "organism.h"
 
 QT_BEGIN_NAMESPACE
@@ -13,6 +15,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 private:
     QVector<Organism> Organisms;
+    QTimer *timer;
 
 public:
     MainWindow(QWidget *parent = nullptr);
@@ -20,5 +23,8 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+public slots:
+    void everyTickSlot();
 };
 #endif // MAINWINDOW_H

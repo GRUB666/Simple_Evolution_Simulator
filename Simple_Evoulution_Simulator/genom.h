@@ -2,7 +2,7 @@
 #define GENOM_H
 
 
-enum Command {Stay, Random_Direction, Go_Forward, Escape, Attack};
+enum Command {STAY, RANDOM_DIRECTION, GO_FORWARD, ESCAPE, ATTACK};
 
 
 class Genom
@@ -36,20 +36,20 @@ public:
     Genom();
 
     //Setters
-    void setLifeLimit               (int     &value)  { Life_limit = value; }
-    void setReproductionDownLevel   (double  &value)  { Reproduction_down_level = value; }
-    void setAttackForce             (double  &value)  { Attack_force = value; }
-    void setSpeed                   (double  &value)  { Speed = value; }
-    void setVisionRadius            (double  &value)  { Vision_radius = value; }
-    void setSize                    (double  &value)  { Size = value; }
-    void setAttackRadius            (double  &value)  { Attack_radius = value; }
-    void setDifferenceMaxLevel      (double  &value)  { Difference_max_level = value; }
-    void setPlant_k                 (double  &value)  { Plant_k = value; }
-    void setMeat_k                  (double  &value)  { Meat_k = value; }
-    void setAilen_Organism_k        (double  &value)  { Ailen_Organism_k = value; }
-    void setFriendly_Organism_k     (double  &value)  { Friendly_Organism_k = value; }
-    void setProbability_of_mutation (double  &value)  { Probability_of_mutation = value; }
-    void setValue_of_mutation       (double  &value)  { Value_of_mutation = value; }
+    void setLifeLimit               (int     value)  { Life_limit = value; }
+    void setReproductionDownLevel   (double  value)  { Reproduction_down_level = value; }
+    void setAttackForce             (double  value)  { Attack_force = value; }
+    void setSpeed                   (double  value)  { Speed = value; }
+    void setVisionRadius            (double  value)  { Vision_radius = value; }
+    void setSize                    (double  value)  { Size = value; }
+    void setAttackRadius            (double  value)  { Attack_radius = value; }
+    void setDifferenceMaxLevel      (double  value)  { Difference_max_level = value; }
+    void setPlant_k                 (double  value)  { Plant_k = value; }
+    void setMeat_k                  (double  value)  { Meat_k = value; }
+    void setAilen_Organism_k        (double  value)  { Ailen_Organism_k = value; }
+    void setFriendly_Organism_k     (double  value)  { Friendly_Organism_k = value; }
+    void setProbability_of_mutation (double  value)  { Probability_of_mutation = value; }
+    void setValue_of_mutation       (double  value)  { Value_of_mutation = value; }
     void setPlant_command           (Command &value) { Plant_command = value; }
     void setMeat_command            (Command &value) { Meat_command = value; }
     void setEmpty_zone_command      (Command &value) { Empty_zone_command = value; }

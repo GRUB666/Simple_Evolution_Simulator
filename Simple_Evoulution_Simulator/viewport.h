@@ -8,6 +8,8 @@
 #include <QDebug>
 #include <QKeyEvent>
 
+#include "organism.h"
+
 
 class Viewport : public QFrame
 {
@@ -15,12 +17,17 @@ class Viewport : public QFrame
 
 private:
     QColor background_color;
+    QVector<Organism> *ToPaintVector;
 
 protected:
     virtual void paintEvent(QPaintEvent*);
 
 public:
     explicit Viewport(QWidget *parent = nullptr);
+
+    void setPointerToPaintVector(QVector<Organism> *value);
+
+    ~Viewport();
 
 signals:
 
