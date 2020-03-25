@@ -1,11 +1,13 @@
 #ifndef GENOM_H
 #define GENOM_H
 
+#include "additional_stuff.h"
 
-enum Command {STAY, RANDOM_DIRECTION, GO_FORWARD, ESCAPE, ATTACK};
 
+enum Command {STAY, RANDOM_DIRECTION, GO_FORWARD, ESCAPE, ATTACK,    _TENAC}; /*_TENAC (The End: Not A Command) - a control value that specifies
+at the end of the enum*/
 
-class Genom
+class Genome
 {
 private:
 
@@ -33,7 +35,9 @@ private:
 
 
 public:
-    Genom();
+    Genome();
+
+    Genome getGenomeOfChild();
 
     //Setters
     void setLifeLimit               (int     value)  { Life_limit = value; }
@@ -50,12 +54,12 @@ public:
     void setFriendly_Organism_k     (double  value)  { Friendly_Organism_k = value; }
     void setProbability_of_mutation (double  value)  { Probability_of_mutation = value; }
     void setValue_of_mutation       (double  value)  { Value_of_mutation = value; }
-    void setPlant_command           (Command &value) { Plant_command = value; }
-    void setMeat_command            (Command &value) { Meat_command = value; }
-    void setEmpty_zone_command      (Command &value) { Empty_zone_command = value; }
-    void setAilen_command           (Command &value) { Ailen_command = value; }
-    void setFriend_command          (Command &value) { Friend_command = value; }
-    void setBeen_attacked_command   (Command &value) { Been_attacked_command = value; }
+    void setPlant_command           (Command value) { Plant_command = value; }
+    void setMeat_command            (Command value) { Meat_command = value; }
+    void setEmpty_zone_command      (Command value) { Empty_zone_command = value; }
+    void setAilen_command           (Command value) { Ailen_command = value; }
+    void setFriend_command          (Command value) { Friend_command = value; }
+    void setBeen_attacked_command   (Command value) { Been_attacked_command = value; }
 
 
     //Getters
@@ -79,8 +83,7 @@ public:
     Command getAilen_command            ()  { return Ailen_command; }
     Command getFriend_command           ()  { return Friend_command; }
     Command getBeen_attacked_command    ()  { return Been_attacked_command; }
-
-
 };
+
 
 #endif // GENOM_H

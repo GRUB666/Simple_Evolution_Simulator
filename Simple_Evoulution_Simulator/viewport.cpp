@@ -15,14 +15,12 @@ void Viewport::paintEvent(QPaintEvent *)
     p.drawRect(QRect(QPoint(-width()/2, height()/2), QPoint(width()/2-2, -height()/2)));//Фон
 
 
-
-
     if(ToPaintVector != nullptr)
     {
         for(auto &var : *ToPaintVector)
         {
             p.setBrush(QBrush(var.getColor(), Qt::SolidPattern));
-            p.drawEllipse(var.getXPos() - var.getGenom().getSize()/2, var.getYPos() - var.getGenom().getSize()/2, var.getGenom().getSize(), var.getGenom().getSize());
+            p.drawEllipse(var.getXPos() - var.getGenome().getSize()/2, var.getYPos() - var.getGenome().getSize()/2, var.getGenome().getSize(), var.getGenome().getSize());
         }
     }
 }

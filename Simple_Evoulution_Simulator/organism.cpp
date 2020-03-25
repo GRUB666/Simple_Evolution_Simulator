@@ -6,7 +6,8 @@ Organism::Organism()
 {
 }
 
-int Organism::CompareGenoms(Genom &g1, Genom &g2)
+
+int Organism::CompareGenomes(Genome &g1, Genome &g2)
 {
     int difference = 0;
 
@@ -15,8 +16,7 @@ int Organism::CompareGenoms(Genom &g1, Genom &g2)
     inc1 = (char*)&g1;
     inc2 = (char*)&g2;
 
-
-    for(int i = 0; i < sizeof(Genom); i++)
+    for(int i = 0; i < sizeof(Genome); i++)
     {
         for(int j = 0; j < 8; j++)
         {
@@ -31,4 +31,10 @@ int Organism::CompareGenoms(Genom &g1, Genom &g2)
     delete inc2;
 
     return difference;
+}
+
+void Organism::FillVectorRandomly(QVector<Organism> &vector, int count, Genome &pattern, int range)
+{
+    Genome gen;
+    Organism org;
 }
