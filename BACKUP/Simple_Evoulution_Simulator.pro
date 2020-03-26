@@ -26,11 +26,11 @@ SOURCES += \
 
 HEADERS += \
     additional_stuff.h \
+    enums.h \
     genom.h \
     mainwindow.h \
     object.h \
     organism.h \
-    values.h \
     viewport.h
 
 FORMS += \

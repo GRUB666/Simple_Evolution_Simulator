@@ -20,14 +20,11 @@ private:
     QVector<Object> Objects;
     QTimer *timer;
 
-    int plants_per_tick;
-
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
     void EvolutionCalc();
-    void GrowPlants();
 
 private:
     Ui::MainWindow *ui;

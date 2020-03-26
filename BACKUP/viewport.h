@@ -26,8 +26,6 @@ public:
     explicit Viewport(QWidget *parent = nullptr);
 
     void setPointerToPaintVector(QVector<Object> *value);
-    int getXSize() { width(); }
-    int getYSize() { height(); }
 
     ~Viewport();
 

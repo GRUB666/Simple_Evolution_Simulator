@@ -5,6 +5,8 @@
 #include "object.h"
 
 
+
+
 class Organism : public Object
 {
 private:
@@ -43,6 +45,8 @@ public:
 };
 
 
+enum TriggerType {VOID_T, FRIEND_T, AILEN_T, PLANT_T, MEAT_T};
+
 struct Trigger
 {
     Trigger()
@@ -75,5 +79,7 @@ struct Trigger
     double triggerForce;
     TriggerType type;
 };
+
+
 
 #endif // ORGANISM_H

@@ -51,6 +51,7 @@ SOURCES       = ../Simple_Evoulution_Simulator/additional_stuff.cpp \
 		../Simple_Evoulution_Simulator/genom.cpp \
 		../Simple_Evoulution_Simulator/main.cpp \
 		../Simple_Evoulution_Simulator/mainwindow.cpp \
+		../Simple_Evoulution_Simulator/object.cpp \
 		../Simple_Evoulution_Simulator/organism.cpp \
 		../Simple_Evoulution_Simulator/viewport.cpp release/moc_mainwindow.cpp \
 		release/moc_viewport.cpp
@@ -58,19 +59,23 @@ OBJECTS       = release/additional_stuff.o \
 		release/genom.o \
 		release/main.o \
 		release/mainwindow.o \
+		release/object.o \
 		release/organism.o \
 		release/viewport.o \
 		release/moc_mainwindow.o \
 		release/moc_viewport.o
 
 DIST          =  ../Simple_Evoulution_Simulator/additional_stuff.h \
+		../Simple_Evoulution_Simulator/enums.h \
 		../Simple_Evoulution_Simulator/genom.h \
 		../Simple_Evoulution_Simulator/mainwindow.h \
+		../Simple_Evoulution_Simulator/object.h \
 		../Simple_Evoulution_Simulator/organism.h \
 		../Simple_Evoulution_Simulator/viewport.h ../Simple_Evoulution_Simulator/additional_stuff.cpp \
 		../Simple_Evoulution_Simulator/genom.cpp \
 		../Simple_Evoulution_Simulator/main.cpp \
 		../Simple_Evoulution_Simulator/mainwindow.cpp \
+		../Simple_Evoulution_Simulator/object.cpp \
 		../Simple_Evoulution_Simulator/organism.cpp \
 		../Simple_Evoulution_Simulator/viewport.cpp
 QMAKE_TARGET  = Simple_Evoulution_Simulator
@@ -92,10 +97,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) Simple_Evoulution_Simulator.zip $(SOURCES) $(DIST) ../Simple_Evoulution_Simulator/Simple_Evoulution_Simulator.pro ../../../5.12.6/mingw73_64/mkspecs/features/spec_pre.prf ../../../5.12.6/mingw73_64/mkspecs/qdevice.pri ../../../5.12.6/mingw73_64/mkspecs/features/device_config.prf ../../../5.12.6/mingw73_64/mkspecs/common/sanitize.conf ../../../5.12.6/mingw73_64/mkspecs/common/gcc-base.conf ../../../5.12.6/mingw73_64/mkspecs/common/g++-base.conf ../../../5.12.6/mingw73_64/mkspecs/common/angle.conf ../../../5.12.6/mingw73_64/mkspecs/features/win32/windows_vulkan_sdk.prf ../../../5.12.6/mingw73_64/mkspecs/common/windows-vulkan.conf ../../../5.12.6/mingw73_64/mkspecs/common/g++-win32.conf ../../../5.12.6/mingw73_64/mkspecs/qconfig.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3danimation.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3danimation_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dcore.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dcore_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dextras.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dextras_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dinput.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dinput_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dlogic.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dlogic_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dquick.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dquick_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dquickanimation.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dquickanimation_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dquickextras.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dquickextras_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dquickinput.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dquickinput_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dquickrender.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dquickrender_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dquickscene2d.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dquickscene2d_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3drender.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3drender_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_accessibility_support_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_axbase.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_axbase_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_axcontainer.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_axcontainer_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_axserver.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_axserver_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_bluetooth.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_bluetooth_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_bootstrap_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_charts.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_charts_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_concurrent.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_concurrent_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_core.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_core_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_datavisualization.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_datavisualization_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_dbus.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_dbus_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_designer.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_designer_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_designercomponents_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_devicediscovery_support_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_edid_support_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_egl_support_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_fb_support_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_fontdatabase_support_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_gamepad.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_gamepad_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_gui.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_gui_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_help.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_help_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_location.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_location_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_multimedia.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_multimedia_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_multimediawidgets.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_network.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_network_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_networkauth.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_networkauth_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_nfc.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_nfc_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_opengl.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_opengl_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_openglextensions.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_openglextensions_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_packetprotocol_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_platformcompositor_support_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_positioning.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_positioning_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_positioningquick.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_positioningquick_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_printsupport.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_printsupport_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_purchasing.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_purchasing_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_qml.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_qml_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_qmldebug_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_qmldevtools_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_qmltest.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_qmltest_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_quick.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_quick_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_quickcontrols2.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_quickparticles_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_quickshapes_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_quicktemplates2.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_quickwidgets.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_quickwidgets_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_remoteobjects.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_remoteobjects_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_repparser.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_repparser_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_script.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_script_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_scripttools.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_scripttools_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_scxml.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_scxml_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_sensors.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_sensors_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_serialbus.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_serialbus_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_serialport.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_serialport_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_sql.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_sql_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_svg.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_svg_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_testlib.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_testlib_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_texttospeech.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_texttospeech_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_theme_support_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_uiplugin.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_uitools.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_uitools_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_virtualkeyboard.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_virtualkeyboard_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_vulkan_support_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_webchannel.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_webchannel_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_websockets.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_websockets_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_widgets.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_widgets_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_windowsuiautomation_support_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_winextras.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_winextras_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_xml.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_xml_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_xmlpatterns.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri ../../../5.12.6/mingw73_64/mkspecs/features/qt_functions.prf ../../../5.12.6/mingw73_64/mkspecs/features/qt_config.prf ../../../5.12.6/mingw73_64/mkspecs/win32-g++/qmake.conf ../../../5.12.6/mingw73_64/mkspecs/features/spec_post.prf .qmake.stash ../../../5.12.6/mingw73_64/mkspecs/features/exclusive_builds.prf ../../../5.12.6/mingw73_64/mkspecs/features/toolchain.prf ../../../5.12.6/mingw73_64/mkspecs/features/default_pre.prf ../../../5.12.6/mingw73_64/mkspecs/features/win32/default_pre.prf ../../../5.12.6/mingw73_64/mkspecs/features/resolve_config.prf ../../../5.12.6/mingw73_64/mkspecs/features/exclusive_builds_post.prf ../../../5.12.6/mingw73_64/mkspecs/features/default_post.prf ../../../5.12.6/mingw73_64/mkspecs/features/build_pass.prf ../../../5.12.6/mingw73_64/mkspecs/features/qml_debug.prf ../../../5.12.6/mingw73_64/mkspecs/features/precompile_header.prf ../../../5.12.6/mingw73_64/mkspecs/features/warn_on.prf ../../../5.12.6/mingw73_64/mkspecs/features/qt.prf ../../../5.12.6/mingw73_64/mkspecs/features/resources.prf ../../../5.12.6/mingw73_64/mkspecs/features/moc.prf ../../../5.12.6/mingw73_64/mkspecs/features/win32/opengl.prf ../../../5.12.6/mingw73_64/mkspecs/features/uic.prf ../../../5.12.6/mingw73_64/mkspecs/features/qmake_use.prf ../../../5.12.6/mingw73_64/mkspecs/features/file_copies.prf ../../../5.12.6/mingw73_64/mkspecs/features/win32/windows.prf ../../../5.12.6/mingw73_64/mkspecs/features/testcase_targets.prf ../../../5.12.6/mingw73_64/mkspecs/features/exceptions.prf ../../../5.12.6/mingw73_64/mkspecs/features/yacc.prf ../../../5.12.6/mingw73_64/mkspecs/features/lex.prf ../Simple_Evoulution_Simulator/Simple_Evoulution_Simulator.pro ../../../5.12.6/mingw73_64/lib/Qt5Widgets.prl ../../../5.12.6/mingw73_64/lib/Qt5Gui.prl ../../../5.12.6/mingw73_64/lib/Qt5Core.prl ../../../5.12.6/mingw73_64/lib/qtmain.prl    ../../../5.12.6/mingw73_64/mkspecs/features/data/dummy.cpp ../Simple_Evoulution_Simulator/additional_stuff.h ../Simple_Evoulution_Simulator/genom.h ../Simple_Evoulution_Simulator/mainwindow.h ../Simple_Evoulution_Simulator/organism.h ../Simple_Evoulution_Simulator/viewport.h  ../Simple_Evoulution_Simulator/additional_stuff.cpp ../Simple_Evoulution_Simulator/genom.cpp ../Simple_Evoulution_Simulator/main.cpp ../Simple_Evoulution_Simulator/mainwindow.cpp ../Simple_Evoulution_Simulator/organism.cpp ../Simple_Evoulution_Simulator/viewport.cpp ../Simple_Evoulution_Simulator/mainwindow.ui    
+	$(ZIP) Simple_Evoulution_Simulator.zip $(SOURCES) $(DIST) ../Simple_Evoulution_Simulator/Simple_Evoulution_Simulator.pro ../../../5.12.6/mingw73_64/mkspecs/features/spec_pre.prf ../../../5.12.6/mingw73_64/mkspecs/qdevice.pri ../../../5.12.6/mingw73_64/mkspecs/features/device_config.prf ../../../5.12.6/mingw73_64/mkspecs/common/sanitize.conf ../../../5.12.6/mingw73_64/mkspecs/common/gcc-base.conf ../../../5.12.6/mingw73_64/mkspecs/common/g++-base.conf ../../../5.12.6/mingw73_64/mkspecs/common/angle.conf ../../../5.12.6/mingw73_64/mkspecs/features/win32/windows_vulkan_sdk.prf ../../../5.12.6/mingw73_64/mkspecs/common/windows-vulkan.conf ../../../5.12.6/mingw73_64/mkspecs/common/g++-win32.conf ../../../5.12.6/mingw73_64/mkspecs/qconfig.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3danimation.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3danimation_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dcore.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dcore_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dextras.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dextras_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dinput.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dinput_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dlogic.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dlogic_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dquick.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dquick_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dquickanimation.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dquickanimation_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dquickextras.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dquickextras_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dquickinput.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dquickinput_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dquickrender.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dquickrender_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dquickscene2d.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3dquickscene2d_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3drender.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_3drender_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_accessibility_support_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_axbase.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_axbase_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_axcontainer.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_axcontainer_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_axserver.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_axserver_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_bluetooth.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_bluetooth_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_bootstrap_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_charts.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_charts_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_concurrent.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_concurrent_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_core.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_core_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_datavisualization.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_datavisualization_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_dbus.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_dbus_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_designer.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_designer_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_designercomponents_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_devicediscovery_support_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_edid_support_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_egl_support_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_fb_support_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_fontdatabase_support_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_gamepad.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_gamepad_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_gui.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_gui_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_help.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_help_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_location.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_location_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_multimedia.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_multimedia_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_multimediawidgets.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_network.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_network_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_networkauth.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_networkauth_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_nfc.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_nfc_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_opengl.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_opengl_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_openglextensions.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_openglextensions_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_packetprotocol_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_platformcompositor_support_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_positioning.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_positioning_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_positioningquick.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_positioningquick_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_printsupport.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_printsupport_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_purchasing.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_purchasing_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_qml.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_qml_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_qmldebug_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_qmldevtools_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_qmltest.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_qmltest_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_quick.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_quick_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_quickcontrols2.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_quickparticles_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_quickshapes_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_quicktemplates2.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_quickwidgets.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_quickwidgets_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_remoteobjects.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_remoteobjects_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_repparser.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_repparser_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_script.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_script_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_scripttools.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_scripttools_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_scxml.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_scxml_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_sensors.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_sensors_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_serialbus.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_serialbus_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_serialport.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_serialport_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_sql.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_sql_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_svg.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_svg_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_testlib.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_testlib_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_texttospeech.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_texttospeech_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_theme_support_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_uiplugin.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_uitools.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_uitools_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_virtualkeyboard.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_virtualkeyboard_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_vulkan_support_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_webchannel.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_webchannel_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_websockets.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_websockets_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_widgets.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_widgets_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_windowsuiautomation_support_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_winextras.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_winextras_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_xml.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_xml_private.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_xmlpatterns.pri ../../../5.12.6/mingw73_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri ../../../5.12.6/mingw73_64/mkspecs/features/qt_functions.prf ../../../5.12.6/mingw73_64/mkspecs/features/qt_config.prf ../../../5.12.6/mingw73_64/mkspecs/win32-g++/qmake.conf ../../../5.12.6/mingw73_64/mkspecs/features/spec_post.prf .qmake.stash ../../../5.12.6/mingw73_64/mkspecs/features/exclusive_builds.prf ../../../5.12.6/mingw73_64/mkspecs/features/toolchain.prf ../../../5.12.6/mingw73_64/mkspecs/features/default_pre.prf ../../../5.12.6/mingw73_64/mkspecs/features/win32/default_pre.prf ../../../5.12.6/mingw73_64/mkspecs/features/resolve_config.prf ../../../5.12.6/mingw73_64/mkspecs/features/exclusive_builds_post.prf ../../../5.12.6/mingw73_64/mkspecs/features/default_post.prf ../../../5.12.6/mingw73_64/mkspecs/features/build_pass.prf ../../../5.12.6/mingw73_64/mkspecs/features/qml_debug.prf ../../../5.12.6/mingw73_64/mkspecs/features/precompile_header.prf ../../../5.12.6/mingw73_64/mkspecs/features/warn_on.prf ../../../5.12.6/mingw73_64/mkspecs/features/qt.prf ../../../5.12.6/mingw73_64/mkspecs/features/resources.prf ../../../5.12.6/mingw73_64/mkspecs/features/moc.prf ../../../5.12.6/mingw73_64/mkspecs/features/win32/opengl.prf ../../../5.12.6/mingw73_64/mkspecs/features/uic.prf ../../../5.12.6/mingw73_64/mkspecs/features/qmake_use.prf ../../../5.12.6/mingw73_64/mkspecs/features/file_copies.prf ../../../5.12.6/mingw73_64/mkspecs/features/win32/windows.prf ../../../5.12.6/mingw73_64/mkspecs/features/testcase_targets.prf ../../../5.12.6/mingw73_64/mkspecs/features/exceptions.prf ../../../5.12.6/mingw73_64/mkspecs/features/yacc.prf ../../../5.12.6/mingw73_64/mkspecs/features/lex.prf ../Simple_Evoulution_Simulator/Simple_Evoulution_Simulator.pro ../../../5.12.6/mingw73_64/lib/Qt5Widgets.prl ../../../5.12.6/mingw73_64/lib/Qt5Gui.prl ../../../5.12.6/mingw73_64/lib/Qt5Core.prl ../../../5.12.6/mingw73_64/lib/qtmain.prl    ../../../5.12.6/mingw73_64/mkspecs/features/data/dummy.cpp ../Simple_Evoulution_Simulator/additional_stuff.h ../Simple_Evoulution_Simulator/enums.h ../Simple_Evoulution_Simulator/genom.h ../Simple_Evoulution_Simulator/mainwindow.h ../Simple_Evoulution_Simulator/object.h ../Simple_Evoulution_Simulator/organism.h ../Simple_Evoulution_Simulator/viewport.h  ../Simple_Evoulution_Simulator/additional_stuff.cpp ../Simple_Evoulution_Simulator/genom.cpp ../Simple_Evoulution_Simulator/main.cpp ../Simple_Evoulution_Simulator/mainwindow.cpp ../Simple_Evoulution_Simulator/object.cpp ../Simple_Evoulution_Simulator/organism.cpp ../Simple_Evoulution_Simulator/viewport.cpp ../Simple_Evoulution_Simulator/mainwindow.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) release/additional_stuff.o release/genom.o release/main.o release/mainwindow.o release/organism.o release/viewport.o release/moc_mainwindow.o release/moc_viewport.o
+	-$(DEL_FILE) release/additional_stuff.o release/genom.o release/main.o release/mainwindow.o release/object.o release/organism.o release/viewport.o release/moc_mainwindow.o release/moc_viewport.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -234,9 +239,10 @@ release/moc_mainwindow.cpp: ../Simple_Evoulution_Simulator/mainwindow.h \
 		../../../5.12.6/mingw73_64/include/QtCore/qtimer.h \
 		../../../5.12.6/mingw73_64/include/QtCore/qbasictimer.h \
 		../Simple_Evoulution_Simulator/organism.h \
-		../../../5.12.6/mingw73_64/include/QtGui/QColor \
 		../Simple_Evoulution_Simulator/genom.h \
 		../Simple_Evoulution_Simulator/additional_stuff.h \
+		../Simple_Evoulution_Simulator/object.h \
+		../../../5.12.6/mingw73_64/include/QtGui/QColor \
 		release/moc_predefs.h \
 		../../../5.12.6/mingw73_64/bin/moc.exe
 	'C:\Qt\5.12.6\mingw73_64\bin\moc.exe' $(DEFINES) --include C:/Qt/Projects/Simple_Evolution_Simulator/build-Simple_Evoulution_Simulator-Desktop_Qt_5_12_6_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/5.12.6/mingw73_64/mkspecs/win32-g++ -IC:/Qt/Projects/Simple_Evolution_Simulator/Simple_Evoulution_Simulator -IC:/Qt/5.12.6/mingw73_64/include -IC:/Qt/5.12.6/mingw73_64/include/QtWidgets -IC:/Qt/5.12.6/mingw73_64/include/QtGui -IC:/Qt/5.12.6/mingw73_64/include/QtANGLE -IC:/Qt/5.12.6/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ../Simple_Evoulution_Simulator/mainwindow.h -o release/moc_mainwindow.cpp
@@ -355,9 +361,10 @@ release/moc_viewport.cpp: ../Simple_Evoulution_Simulator/viewport.h \
 		../../../5.12.6/mingw73_64/include/QtCore/QDebug \
 		../../../5.12.6/mingw73_64/include/QtGui/QKeyEvent \
 		../Simple_Evoulution_Simulator/organism.h \
-		../../../5.12.6/mingw73_64/include/QtGui/QColor \
 		../Simple_Evoulution_Simulator/genom.h \
 		../Simple_Evoulution_Simulator/additional_stuff.h \
+		../Simple_Evoulution_Simulator/object.h \
+		../../../5.12.6/mingw73_64/include/QtGui/QColor \
 		release/moc_predefs.h \
 		../../../5.12.6/mingw73_64/bin/moc.exe
 	'C:\Qt\5.12.6\mingw73_64\bin\moc.exe' $(DEFINES) --include C:/Qt/Projects/Simple_Evolution_Simulator/build-Simple_Evoulution_Simulator-Desktop_Qt_5_12_6_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/5.12.6/mingw73_64/mkspecs/win32-g++ -IC:/Qt/Projects/Simple_Evolution_Simulator/Simple_Evoulution_Simulator -IC:/Qt/5.12.6/mingw73_64/include -IC:/Qt/5.12.6/mingw73_64/include/QtWidgets -IC:/Qt/5.12.6/mingw73_64/include/QtGui -IC:/Qt/5.12.6/mingw73_64/include/QtANGLE -IC:/Qt/5.12.6/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ../Simple_Evoulution_Simulator/viewport.h -o release/moc_viewport.cpp
@@ -485,9 +492,10 @@ ui_mainwindow.h: ../Simple_Evoulution_Simulator/mainwindow.ui \
 		../../../5.12.6/mingw73_64/include/QtCore/QDebug \
 		../../../5.12.6/mingw73_64/include/QtGui/QKeyEvent \
 		../Simple_Evoulution_Simulator/organism.h \
-		../../../5.12.6/mingw73_64/include/QtGui/QColor \
 		../Simple_Evoulution_Simulator/genom.h \
-		../Simple_Evoulution_Simulator/additional_stuff.h
+		../Simple_Evoulution_Simulator/additional_stuff.h \
+		../Simple_Evoulution_Simulator/object.h \
+		../../../5.12.6/mingw73_64/include/QtGui/QColor
 	'C:\Qt\5.12.6\mingw73_64\bin\uic.exe' ../Simple_Evoulution_Simulator/mainwindow.ui -o ui_mainwindow.h
 
 compiler_yacc_decl_make_all:
@@ -502,11 +510,105 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
-release/additional_stuff.o: ../Simple_Evoulution_Simulator/additional_stuff.cpp ../Simple_Evoulution_Simulator/additional_stuff.h
+release/additional_stuff.o: ../Simple_Evoulution_Simulator/additional_stuff.cpp ../Simple_Evoulution_Simulator/additional_stuff.h \
+		../Simple_Evoulution_Simulator/object.h \
+		../../../5.12.6/mingw73_64/include/QtGui/QColor \
+		../../../5.12.6/mingw73_64/include/QtGui/qcolor.h \
+		../../../5.12.6/mingw73_64/include/QtGui/qtguiglobal.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qglobal.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qconfig.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qtcore-config.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qsystemdetection.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qprocessordetection.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qcompilerdetection.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qtypeinfo.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qsysinfo.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qlogging.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qflags.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qatomic.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qbasicatomic.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qgenericatomic.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qatomic_msvc.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qglobalstatic.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qmutex.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qnumeric.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qversiontagging.h \
+		../../../5.12.6/mingw73_64/include/QtGui/qtgui-config.h \
+		../../../5.12.6/mingw73_64/include/QtGui/qrgb.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qnamespace.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qstringlist.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qlist.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qalgorithms.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qiterator.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qrefcount.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qarraydata.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qhashfunctions.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qstring.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qchar.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qbytearray.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qstringliteral.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qstringalgorithms.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qstringview.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qstringbuilder.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qpair.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qbytearraylist.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qregexp.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qstringmatcher.h \
+		../../../5.12.6/mingw73_64/include/QtGui/qrgba64.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/additional_stuff.o ../Simple_Evoulution_Simulator/additional_stuff.cpp
 
 release/genom.o: ../Simple_Evoulution_Simulator/genom.cpp ../Simple_Evoulution_Simulator/genom.h \
-		../Simple_Evoulution_Simulator/additional_stuff.h
+		../Simple_Evoulution_Simulator/additional_stuff.h \
+		../Simple_Evoulution_Simulator/object.h \
+		../../../5.12.6/mingw73_64/include/QtGui/QColor \
+		../../../5.12.6/mingw73_64/include/QtGui/qcolor.h \
+		../../../5.12.6/mingw73_64/include/QtGui/qtguiglobal.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qglobal.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qconfig.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qtcore-config.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qsystemdetection.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qprocessordetection.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qcompilerdetection.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qtypeinfo.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qsysinfo.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qlogging.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qflags.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qatomic.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qbasicatomic.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qgenericatomic.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qatomic_msvc.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qglobalstatic.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qmutex.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qnumeric.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qversiontagging.h \
+		../../../5.12.6/mingw73_64/include/QtGui/qtgui-config.h \
+		../../../5.12.6/mingw73_64/include/QtGui/qrgb.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qnamespace.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qstringlist.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qlist.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qalgorithms.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qiterator.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qrefcount.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qarraydata.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qhashfunctions.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qstring.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qchar.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qbytearray.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qstringliteral.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qstringalgorithms.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qstringview.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qstringbuilder.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qpair.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qbytearraylist.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qregexp.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qstringmatcher.h \
+		../../../5.12.6/mingw73_64/include/QtGui/qrgba64.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/genom.o ../Simple_Evoulution_Simulator/genom.cpp
 
 release/main.o: ../Simple_Evoulution_Simulator/main.cpp ../Simple_Evoulution_Simulator/mainwindow.h \
@@ -620,9 +722,10 @@ release/main.o: ../Simple_Evoulution_Simulator/main.cpp ../Simple_Evoulution_Sim
 		../../../5.12.6/mingw73_64/include/QtCore/qtimer.h \
 		../../../5.12.6/mingw73_64/include/QtCore/qbasictimer.h \
 		../Simple_Evoulution_Simulator/organism.h \
-		../../../5.12.6/mingw73_64/include/QtGui/QColor \
 		../Simple_Evoulution_Simulator/genom.h \
 		../Simple_Evoulution_Simulator/additional_stuff.h \
+		../Simple_Evoulution_Simulator/object.h \
+		../../../5.12.6/mingw73_64/include/QtGui/QColor \
 		../../../5.12.6/mingw73_64/include/QtWidgets/QApplication \
 		../../../5.12.6/mingw73_64/include/QtWidgets/qapplication.h \
 		../../../5.12.6/mingw73_64/include/QtCore/qcoreapplication.h \
@@ -743,9 +846,10 @@ release/mainwindow.o: ../Simple_Evoulution_Simulator/mainwindow.cpp ../Simple_Ev
 		../../../5.12.6/mingw73_64/include/QtCore/qtimer.h \
 		../../../5.12.6/mingw73_64/include/QtCore/qbasictimer.h \
 		../Simple_Evoulution_Simulator/organism.h \
-		../../../5.12.6/mingw73_64/include/QtGui/QColor \
 		../Simple_Evoulution_Simulator/genom.h \
 		../Simple_Evoulution_Simulator/additional_stuff.h \
+		../Simple_Evoulution_Simulator/object.h \
+		../../../5.12.6/mingw73_64/include/QtGui/QColor \
 		ui_mainwindow.h \
 		../../../5.12.6/mingw73_64/include/QtCore/QVariant \
 		../../../5.12.6/mingw73_64/include/QtWidgets/QApplication \
@@ -789,7 +893,59 @@ release/mainwindow.o: ../Simple_Evoulution_Simulator/mainwindow.cpp ../Simple_Ev
 		../../../5.12.6/mingw73_64/include/QtGui/QKeyEvent
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/mainwindow.o ../Simple_Evoulution_Simulator/mainwindow.cpp
 
+release/object.o: ../Simple_Evoulution_Simulator/object.cpp ../Simple_Evoulution_Simulator/object.h \
+		../../../5.12.6/mingw73_64/include/QtGui/QColor \
+		../../../5.12.6/mingw73_64/include/QtGui/qcolor.h \
+		../../../5.12.6/mingw73_64/include/QtGui/qtguiglobal.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qglobal.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qconfig.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qtcore-config.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qsystemdetection.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qprocessordetection.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qcompilerdetection.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qtypeinfo.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qsysinfo.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qlogging.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qflags.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qatomic.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qbasicatomic.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qgenericatomic.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qatomic_msvc.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qglobalstatic.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qmutex.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qnumeric.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qversiontagging.h \
+		../../../5.12.6/mingw73_64/include/QtGui/qtgui-config.h \
+		../../../5.12.6/mingw73_64/include/QtGui/qrgb.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qnamespace.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qstringlist.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qlist.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qalgorithms.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qiterator.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qrefcount.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qarraydata.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qhashfunctions.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qstring.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qchar.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qbytearray.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qstringliteral.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qstringalgorithms.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qstringview.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qstringbuilder.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qpair.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qbytearraylist.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qregexp.h \
+		../../../5.12.6/mingw73_64/include/QtCore/qstringmatcher.h \
+		../../../5.12.6/mingw73_64/include/QtGui/qrgba64.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/object.o ../Simple_Evoulution_Simulator/object.cpp
+
 release/organism.o: ../Simple_Evoulution_Simulator/organism.cpp ../Simple_Evoulution_Simulator/organism.h \
+		../Simple_Evoulution_Simulator/genom.h \
+		../Simple_Evoulution_Simulator/additional_stuff.h \
+		../Simple_Evoulution_Simulator/object.h \
 		../../../5.12.6/mingw73_64/include/QtGui/QColor \
 		../../../5.12.6/mingw73_64/include/QtGui/qcolor.h \
 		../../../5.12.6/mingw73_64/include/QtGui/qtguiglobal.h \
@@ -836,8 +992,6 @@ release/organism.o: ../Simple_Evoulution_Simulator/organism.cpp ../Simple_Evoulu
 		../../../5.12.6/mingw73_64/include/QtCore/qregexp.h \
 		../../../5.12.6/mingw73_64/include/QtCore/qstringmatcher.h \
 		../../../5.12.6/mingw73_64/include/QtGui/qrgba64.h \
-		../Simple_Evoulution_Simulator/genom.h \
-		../Simple_Evoulution_Simulator/additional_stuff.h \
 		../../../5.12.6/mingw73_64/include/QtCore/QDebug \
 		../../../5.12.6/mingw73_64/include/QtCore/qdebug.h \
 		../../../5.12.6/mingw73_64/include/QtCore/qhash.h \
@@ -978,9 +1132,10 @@ release/viewport.o: ../Simple_Evoulution_Simulator/viewport.cpp ../Simple_Evoulu
 		../../../5.12.6/mingw73_64/include/QtCore/QDebug \
 		../../../5.12.6/mingw73_64/include/QtGui/QKeyEvent \
 		../Simple_Evoulution_Simulator/organism.h \
-		../../../5.12.6/mingw73_64/include/QtGui/QColor \
 		../Simple_Evoulution_Simulator/genom.h \
-		../Simple_Evoulution_Simulator/additional_stuff.h
+		../Simple_Evoulution_Simulator/additional_stuff.h \
+		../Simple_Evoulution_Simulator/object.h \
+		../../../5.12.6/mingw73_64/include/QtGui/QColor
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/viewport.o ../Simple_Evoulution_Simulator/viewport.cpp
 
 release/moc_mainwindow.o: release/moc_mainwindow.cpp 

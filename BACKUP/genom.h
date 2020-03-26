@@ -3,11 +3,12 @@
 
 #include "additional_stuff.h"
 
-enum TriggerType {VOID_T, FRIEND_T, AILEN_T, PLANT_T, MEAT_T};
-
 
 enum Command {STAY, RANDOM_DIRECTION, GO_FORWARD, ESCAPE, ATTACK,    _TENAC}; /*_TENAC (The End: Not A Command) - a control value that specifies
 at the end of the enum*/
+
+
+
 
 class Genome
 {
@@ -38,7 +39,7 @@ public:
     Genome();
 
     Genome getGenomeOfChild();
-    Command getCommandToTrigger(TriggerType &trig);
+    Command getCommandToTrigger(Trigger &trig);
 
     //Setters
     void setLifeLimit               (int     value)  { Life_limit = value; }

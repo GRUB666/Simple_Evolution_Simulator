@@ -42,7 +42,6 @@ void MainWindow::EvolutionCalc()
         {
             Organism &actor = *dynamic_cast<Organism*>(&var);
 
-            //Reproduction-----------------
             if(actor.getEnergy() >= actor.getGenome().getReproductionDownLevel())
             {
                 Organism child;
@@ -58,10 +57,8 @@ void MainWindow::EvolutionCalc()
                 Objects.push_front(child);
             }
 
-            //Main act
             else
             {
-                //Analyse all objects in the vision zone
                 for(auto &target : Objects)
                 {
                     if(getDistance(actor, target) <= actor.getGenome().getVisionRadius())
@@ -78,8 +75,7 @@ void MainWindow::EvolutionCalc()
                     }
                 }
 
-                //Do action
-                switch (actor.getGenome().getCommandToTrigger(strongest_trigger.type))
+                switch (actor.getGenome().getCommandToTrigger(strongest_trigger))
                 {
                 case Command::RANDOM_DIRECTION:
                 {
@@ -115,31 +111,19 @@ void MainWindow::EvolutionCalc()
                 }
             }
 
-            //Check life energy-----
+        }
+
+        if(var.getObjectType() == ObjectType::ORGANISM)
+        {
             Organism &organism = *dynamic_cast<Organism*>(&var);
             organism.wasteEnergy();
 
-            //Death check
             if(!organism.canBeAlive())
             {
                 var.setObjectType(ObjectType::MEAT);
                 var.setColor(Qt::red);
             }
-            //----------------------
         }
-
-
     }
-}
-
-void MainWindow::GrowPlants()
-{
-    int x = getValueFromDiapasone(-ui->viewport->getXSize()/2, ui->viewport->getXSize()/2);
-    int y = getValueFromDiapasone(-ui->viewport->getYSize()/2, ui->viewport->getYSize()/2);
-
-    Object plant(ObjectType::PLANT);
-    plant.setXPos(x);
-    plant.setYPos(y);
-
 }
 

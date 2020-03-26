@@ -78,9 +78,9 @@ Genome Genome::getGenomeOfChild()
     return new_genome;
 }
 
-Command Genome::getCommandToTrigger(TriggerType &trig)
+Command Genome::getCommandToTrigger(Trigger &trig)
 {
-    switch (trig)
+    switch (trig.type)
     {
     case TriggerType::VOID_T:
         return Empty_zone_command;
